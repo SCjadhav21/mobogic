@@ -25,7 +25,7 @@ const Profile = () => {
   const [downloadLink, setDownloadLink] = useState(null);
   const [iD, setId] = useState("");
   const deleteImage = (id) => {
-    axios.delete(`http://127.0.0.1:4500/file/${id}`).then((res) => {
+    axios.delete(`http://localhost:4500/file/${id}`).then((res) => {
       if (res.data === "file deleted successfully") {
         setRefresh(!refresh);
         alert("file deleted successfully");
@@ -38,7 +38,7 @@ const Profile = () => {
   const downloadImage = async (filecode, id) => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:4500/file/${filecode}/download`,
+        `http://localhost:4500/file/${filecode}/download`,
         {
           responseType: "blob",
           headers: {
@@ -67,7 +67,7 @@ const Profile = () => {
       formData.append("file", input);
 
       axios
-        .post("http://127.0.0.1:4500/file/upload", formData, {
+        .post("http://localhost:4500/file/upload", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: state.token,
@@ -91,7 +91,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:4500/file", {
+      .get("http://localhost:4500/file", {
         headers: {
           Authorization: state.token,
         },

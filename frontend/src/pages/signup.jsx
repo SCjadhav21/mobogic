@@ -44,7 +44,7 @@ const Signup = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const url = "http://127.0.0.1:4500/user/register";
+      const url = "http://localhost:4500/user/register";
       const response = await axios.post(url, data);
 
       if (response.status === 201) {

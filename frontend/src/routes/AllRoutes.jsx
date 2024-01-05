@@ -4,7 +4,7 @@ import { Box } from "@chakra-ui/react";
 
 import Signup from "../pages/signup";
 import Login from "../pages/login";
-import PrivateRoute, { PrivateRouteAdmin } from "./PrivateRoutes";
+import PrivateRoute from "./PrivateRoutes";
 import Profile from "../pages/profile";
 
 const AllRoutes = () => {

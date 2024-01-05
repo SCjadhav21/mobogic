@@ -47,7 +47,7 @@ const Login = () => {
 
     setLoading(true);
     if (data.username && data.password) {
-      axios("http://127.0.0.1:4500/user/login", {
+      axios("http://localhost:4500/user/login", {
         method: "POST",
         data: data,
         headers: {
